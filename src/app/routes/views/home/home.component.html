@@ -1,9 +1,10 @@
-<app-header />
+<app-header [totalBudget]="getTotalBudget()" [totalIncome]="getTotalIncome()" [totalExpenses]="getTotalExpenses()"
+  [totalPercentage]="getTotalPercentage()" />
 <app-form />
 
 <div class="contenedor limpiarEstilos">
 
   <app-income />
-  <app-expenses />
+  <app-expenses [totalIncome]="getTotalIncome()" />
 
 </div>

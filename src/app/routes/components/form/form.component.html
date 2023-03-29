@@ -1,13 +1,20 @@
-<form>
+<!-- <pre>{{formBudget.value | json}}</pre> -->
+
+<form [formGroup]="formBudget" (ngSubmit)="send()">
   <div class="agregar">
     <div class="agregar_contenedor">
-      <select class="agregar_tipo">
-        <option value="ing" selected>+</option>
-        <option value="egr">-</option>
+      <select [ngClass]="{ 'red-border': redBorder }" formControlName="operation" name="operation" class="agregar_tipo">
+        <option *ngFor="let operation of operations" [value]="operation.abbreviation">
+          {{ operation.sign }}
+        </option>
       </select>
-      <input type="text" class="agregar_descripcion" placeholder="Agregar Descripción">
-      <input type="number" class="agregar_valor" placeholder="Valor">
-      <button class="agregar_btn"><i class="ion-ios-checkmark-outline"></i></button>
+      <input formControlName="description" name="description" type="text" class="agregar_descripcion"
+        placeholder="Agregar Descripción" />
+      <input formControlName="value" name="value" type="text" class="agregar_valor" placeholder="Valor" mask="separator"
+        thousandSeparator="." />
+      <button type="submit" name="submit" class="agregar_btn">
+        <mat-icon>check_circle_outline</mat-icon>
+      </button>
     </div>
   </div>
 </form>
