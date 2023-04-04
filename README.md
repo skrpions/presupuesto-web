@@ -29,7 +29,7 @@ Project structure.
 
 ### Screenshot
 
-![Image text](https://github.com/skrpions/sigma-web/blob/main/src/assets/screen.png?raw=true)
+![Image text](https://github.com/skrpions/presupuesto-web/blob/master/src/assets/screen.png?raw=true)
 
 ## Technologies
 
