@@ -1,27 +1,143 @@
-# PresupuestoWeb
+# Presupuesto-Web
+
+---
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Table of Contents
 
-## Code scaffolding
+1. [General Info](#general-info)
+2. [Technologies](#technologies)
+3. [Installation](#installation)
+4. [Commands](#commands)
+5. [Utils](#utils)
+6. [FAQs](#faqs)
+7. [Demo](#demo)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### General Info
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Project structure.
 
-## Running unit tests
+> - Core
+> - Data
+> - Routes
+> - Shared
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Screenshot
 
-## Running end-to-end tests
+![Image text](https://github.com/skrpions/sigma-web/blob/main/src/assets/screen.png?raw=true)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Technologies
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A list of technologies used within the project:
+
+- Angular CLI: Version 15.2.1
+- Angular Material: Version 15.2.1
+- Nodejs: Version 18.14.1
+
+## Installation
+
+---
+
+A little intro about the installation.
+
+```
+$ git clone https://github.com/skrpions/presupuesto-web.git
+$ cd ../path/to/the/file
+$ npm install
+$ ng s -o | npm start
+```
+
+## Commands
+
+---
+
+The following commands create modules, components, services, models, etc.
+
+- Shared: Module
+
+```
+$ ng g m shared/angular-material --flat
+```
+
+---
+
+- Routes: Components
+
+```
+$ ng g c routes/views/home
+$ ng g c routes/components/header
+$ ng g c routes/components/form
+$ ng g c routes/components/income
+$ ng g c routes/components/expenses
+$ ng g c routes/components/footer
+```
+
+---
+
+- Routes: Models
+
+```
+$ ng g i core/models/concept
+```
+
+---
+
+- Routes: Services
+
+```
+$ ng g s core/services/budget
+```
+
+---
+
+## Utils
+
+---
+
+Important: Assign aliases to routes.
+
+- Go to _tsconfig.json_ and add the following:
+
+```
+"paths": {
+  "@core": ["app/core"],
+  "@core/_": ["app/core/_"],
+  "@data": ["app/data"],
+  "@data/_": ["app/data/_"],
+  "@routes": ["app/routes"],
+  "@routes/_": ["app/routes/_"],
+  "@shared": ["app/shared"],
+  "@shared/_": ["app/shared/_"],
+  "@env": ["environments"],
+  "@env/_": ["environments/_"]
+},
+```
+
+## FAQs
+
+---
+
+A list of frequently asked questions
+
+1. **How to share the web application on a local network?**
+
+   - Execute:
+
+```
+$ ng s --host=0.0.0.0 --port=4200 -o
+```
+
+Then I must open a web browser (chrome, firefox) from any device and enter the ip of the local network: for example: _192.168.0.106:4200_.
+
+## Demo
+
+---
+
+[Demonstration](https://skrpions.github.io/presupuesto-web/)
