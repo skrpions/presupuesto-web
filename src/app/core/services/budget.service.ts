@@ -30,8 +30,4 @@ export class BudgetService {
       value: 200,
     },
   ];
-
-  /* delete(index: number) {
-    this.listIncome.splice(index, 1);
-  } */
 }

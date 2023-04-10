@@ -28,10 +28,10 @@ export class FormComponent {
   ];
 
   constructor() {
-    this.loadForm();
+    this.initForm();
   }
 
-  loadForm(): void {
+  initForm(): void {
     this.formBudget = this.fb.nonNullable.group({
       operation: ['ing', []],
       description: ['', [Validators.required, Validators.maxLength(50)]],

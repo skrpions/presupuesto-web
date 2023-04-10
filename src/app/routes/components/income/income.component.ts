@@ -16,10 +16,6 @@ export class IncomeComponent implements OnInit {
     this.listIncome = this._budgetSvc.listIncome;
   }
 
-  /* deleteItem(index: number) {
-    this._budgetSvc.delete(index);
-  } */
-
   delete(index: number) {
     this.listIncome.splice(index, 1);
   }
