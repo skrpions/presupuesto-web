@@ -1,0 +1,16 @@
+<pre>{{ formBudget.valid }}</pre>
+<pre>{{ formBudget.value | json }}</pre>
+
+<form [formGroup]="formBudget" (ngSubmit)="send()">
+  <div class="agregar">
+    <div class="agregar_contenedor">
+      <select formControlName="operation" class="agregar_tipo">
+        <option value="ing" selected>+</option>
+        <option value="egr">-</option>
+      </select>
+      <input formControlName="description" type="text" class="agregar_descripcion" placeholder="Agregar Descripción">
+      <input formControlName="value" type="number" class="agregar_valor" placeholder="Valor">
+      <button type="submit" class="agregar_btn"><i class="ion-ios-checkmark-outline"></i></button>
+    </div>
+  </div>
+</form>
