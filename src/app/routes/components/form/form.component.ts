@@ -10,6 +10,7 @@ import { BudgetService } from 'src/app/core/services/budget.service';
 })
 export class FormComponent {
   formBudget!: FormGroup;
+  redBorder: boolean = false;
   concept!: Concept;
   operations = [
     {
@@ -32,12 +33,18 @@ export class FormComponent {
       description: ['', [Validators.required, Validators.minLength(3)]],
       value: ['', [Validators.required, Validators.min(0)]],
     });
+
+    this.formBudget.get('operation')?.valueChanges.subscribe((value) => {
+      return (this.redBorder = value !== 'ing');
+    });
   }
 
   send() {
     if (this.formBudget.invalid) return;
 
     this.concept = this.formBudget.value;
+    console.log('Concept', this.concept);
+
     const operation = this.concept.operation;
 
     // Send Form
@@ -46,6 +53,13 @@ export class FormComponent {
       : this._budgetSvc.listExpenses.push(this.concept);
 
     // Reset Form
+    //this.resetValues();
     this.formBudget.reset();
+    this.formBudget.patchValue({ operation: 'ing' });
   }
+
+  /* resetValues() {
+    this.formBudget.patchValue({ description: '' });
+    this.formBudget.patchValue({ value: '' });
+  } */
 }
